@@ -1,4 +1,4 @@
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-12MiB%20P99%201.1ms%2050x%2012.38GiB-brightgreen)](https://vagrantly-creatable-stem.ngrok-free.dev/vram) [![GitHub](https://img.shields.io/badge/GitHub-Felix--Edgar--Song%2Fblackwell--llm--serving-blue)](https://github.com/Felix-Edgar-Song/blackwell-llm-serving)
+https://felix-edgar-song.github.io/blackwell-llm-serving/vram | GitHub: github.com/Felix-Edgar-Song/blackwell-llm-serving | RTX 5060 Ti 16GB sm_120 36 SMs 232.7MiB/265.5MiB P50 0.9ms P99 1.1ms 50 replicas 12.385GiB<16GiB 
 
 Live Demo: https://vagrantly-creatable-stem.ngrok-free.dev/vram | Health: /health | Generate: /generate?prompt=Hello%20Meta%20SG - RTX 5060 Ti 16GB sm_120 Blackwell 36 SMs 232.7MiB / 265.5MiB Peak P50 0.9ms P99 1.1ms 50x 12.385GiB<16GiB Least VRAM LB 8000-8049
 
