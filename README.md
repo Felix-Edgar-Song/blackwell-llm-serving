@@ -1,4 +1,4 @@
-https://felix-edgar-song.github.io/blackwell-llm-serving/vram | GitHub: github.com/Felix-Edgar-Song/blackwell-llm-serving | RTX 5060 Ti 16GB sm_120 36 SMs 232.7MiB/265.5MiB P50 0.9ms P99 1.1ms 50 replicas 12.385GiB<16GiB 
+Live Demo: https://felix-edgar-song.github.io/blackwell-llm-serving/vram | GitHub: github.com/Felix-Edgar-Song/blackwell-llm-serving | RTX 5060 Ti 16GB sm_120 36 SMs 232.7MiB/265.5MiB P50 0.9ms P99 1.1ms 50 replicas 12.385GiB<16GiB
 
 ## 232.7MiB / 265.5MiB Peak P50 0.9ms P99 1.1ms 100 runs 50 replicas 12.385GiB<16GiB Least VRAM LB 8000-8049 /vram health /generate 5060 Ti 16GB sm_120 Blackwell 36 SMs 74.2% cut 902MiB 17→232.7MiB 50 3x 2-month
 
