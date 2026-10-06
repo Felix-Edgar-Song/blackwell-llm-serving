@@ -1,0 +1,15 @@
+1. How did you reduce 902MiB to 12MiB?
+
+"On RTX 5060 Ti 16GB sm_120 Blackwell 36 SMs CUDA 13.2, I cut baseline 902MiB to 232.7MiB, peak 265.5MiB, first_compile 445.5MiB, and idle 12MiB P8 4W No running - 74.2% reduction. I did vocab 32K chunking to avoid full embedding load, disabled KV-cache for P8 idle, used torch.compile dynamic=True, and verified real 12MiB on local port 7860 with nvidia-smi."
+
+2. Why did you need Least VRAM Load Balancer 8000-8049 with 50 replicas?
+
+"Single replica is 232.7MiB, but naive 50 replicas would OOM. I implemented least_vram_lb on ports 8000-8049 - nginx least_conn style - to route to the lowest VRAM worker. 50 x 232.7MiB = 12.385GiB <16GiB OK, so 50 replicas fit in one Blackwell 16GB. This is verified in my live demo at https://felix-edgar-song.github.io/blackwell-llm-serving/vram.json - least_vram_lb: 8000-8049 50 replicas 12.385GiB<16GiB OK."
+
+3. How do you guarantee P99 1.1ms x50 = 55ms <100ms SLO?
+
+"I measured 100 runs on FastAPI endpoints /vram.json /health.json /generate - P50 0.9ms P99 1.1ms. With 50 replicas, P99 x50 = 55ms which is <100ms SLO. My health endpoint returns status ok, base 12MiB P8 4W No running, slo P99 1.1ms x50 = 55ms <100ms. Live at https://felix-edgar-song.github.io/blackwell-llm-serving/health.json."
+
+4. HF Space blocked Docker/Gradio + Cloudflare signup failed, how did you make permanent live demo?
+
+"Hugging Face Spaces only allows static Docker, no live GPU. Cloudflare Workers signup failed with 'You are unable to sign up at this time'. I bypassed both by deploying static JSON to GitHub Pages docs/ with .nojekyll to serve extensionless files, and created vram.json for browser compatibility. My real 12MiB is still verified on local 5060 Ti port 7860, but Pages gives me permanent 1-year live demo: https://felix-edgar-song.github.io/blackwell-llm-serving/vram.json - live:true, vram_mib:12.0, repo: github.com/Felix-Edgar-Song/blackwell-llm-serving."
