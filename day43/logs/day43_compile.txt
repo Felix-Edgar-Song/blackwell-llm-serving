@@ -1,0 +1,3 @@
+Before: 0.0 MiB, Device: NVIDIA GeForce RTX 5060 Ti cap (12, 0)
+After compile: 33.0 MiB, Peak: 33.1 MiB
+Expected peak ~445.5MiB due to torch.compile dynamic on sm_120
