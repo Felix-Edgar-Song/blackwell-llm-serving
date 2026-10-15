@@ -1,0 +1,2 @@
+memory.used [MiB], power.draw [W], pstate
+12 MiB, 5.35 W, P8
