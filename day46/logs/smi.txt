@@ -1,0 +1,2 @@
+memory.used [MiB], power.draw [W], pstate, temperature.gpu
+14 MiB, 4.78 W, P8, 33
