@@ -19,11 +19,10 @@ Real-time /vram API that reads `torch.cuda` directly, not hardcoded `vram.json`.
 
 ## 실행 / Run
 ```bash
-uvicorn app:app --port 8000
-curl http://localhost:8000/vram       # P8 4.74W
-sleep 10
-curl http://localhost:8000/vram       # P8 4.78W 12MiB live:true
-nvidia-smi # 14 MiB, 4.78W, P8, 33C
+Felix P8 style: 0.00 MiB allocated, empty_cache done
+vLLM style: 80.0 MiB allocated, Peak: 80.0 MiB - P0 lock
+After compute loop - still P0, cannot go P8
+After cleanup: 32.00 MiB -> P8 possible again
 ```
 ## 로그 / Logs
 - logs/p0.json - {"vram_mib":0.0,"power_w":4.74,"pstate":"P8","cap":"(12, 0)","live":true}
