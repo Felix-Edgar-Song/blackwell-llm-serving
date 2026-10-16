@@ -26,6 +26,7 @@ curl http://localhost:8000/compare    # felix 0MiB P8 vs vLLM 76MiB P1
 - compare_p0.json: felix P8 5.21W vs vLLM 76MiB P1 8.13W
 - smi_final.txt: 12 MiB, 5.21W, P8, 33C
 
+
 ## 면접 / Interview
 - KO: "/compare로 0MiB P8 5.21W vs 76MiB P1 18W, empty_cache로 13W 절약, 12MiB live"
 - EN: "/compare shows 0MiB P8 5.21W vs 76MiB P1 18W, 13W saved with empty_cache, 12MiB live"
