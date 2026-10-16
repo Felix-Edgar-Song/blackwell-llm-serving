@@ -1,0 +1,1 @@
+{"felix":{"vram_mib":0.0,"power_w":5.728,"pstate":"P8","how":"empty_cache+idle -> P8 5W"},"vllm_sim":{"vram_mib":76.0,"peak_mib":80.0,"power_w":5.728,"pstate":"P8","how":"KV cache polling -> P0 18W lock"},"saving":"13W P8 vs P0, 12MiB vs 80MiB","cap":"(12,0) sm_120 RTX 5060 Ti"}
